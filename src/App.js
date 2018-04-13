@@ -6,23 +6,36 @@ import foods from './foods.json';
 // import logo from './logo.svg';
 import './App.css';
 
+let currentScore = 0;
+let shuffledFoods = foods;
+
 class App extends Component {
-  
+
+
   state = {
     foods,
-    // currentScore
+    currentScore
   }
 
-  // handleIncrement = 
+  handleIncrement = id => {
+    this.setState({ currentScore: this.state.currentScore + 1 });
+    console.log("working");
+
+    // shuffledFoods.sort(() => Math.random());
+    //sort()takes parameter a, which is .5 and parameter b, which is a randomly generated number between 0-1, not including 1. If .5-random number is negative, then a will be sorted to an index lower than be. If .5-random number is positive, a will be sorted to a higher index than b. This is done for each item in the array.
+    shuffledFoods.sort((a,b) => 0.5 - Math.random());
+    
+  };
 
   render() {
     return (
       <Wrapper>
         <Title>Foods List</Title>
+        <p>{this.state.currentScore}</p>
         {this.state.foods.map(food => (
 
           <FoodCard 
-          // handleIncrement = {this.handleIncrement}
+          handleIncrement = {this.handleIncrement}
           id = {food.id}
           key = {food.id}
           name = {food.name} 

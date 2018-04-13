@@ -4,7 +4,7 @@ import "./FoodCard.css";
 const FoodCard = props => (
   <div className="card">
     <div className="img-container">
-      <img alt={props.name} src={props.image} />
+      <img alt={props.name} src={props.image} onClick={() => props.handleIncrement(props.id)} />
     </div>
     <div className="content">
       <ul>
@@ -13,7 +13,7 @@ const FoodCard = props => (
         </li>     
       </ul>
     </div>
-    <span onClick={() => props.handleIncrement(props.id)}></span>
+    {/* <span onClick={() => props.handleIncrement(props.id)}></span> */}
   </div>
 );
 
