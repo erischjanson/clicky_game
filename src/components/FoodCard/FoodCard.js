@@ -10,18 +10,10 @@ const FoodCard = props => (
       <ul>
         <li>
           <strong>Name:</strong> {props.name}
-        </li>
-        {/* <li>
-          <strong>Occupation:</strong> {props.occupation}
-        </li>
-        <li>
-          <strong>Location:</strong> {props.location}
-        </li> */}
+        </li>     
       </ul>
     </div>
-    <span onClick={() => props.handleIncrement(props.id)}>
-      𝘅
-    </span>
+    <span onClick={() => props.handleIncrement(props.id)}></span>
   </div>
 );
 
